@@ -1,233 +1,112 @@
-<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="rulehomisarah" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
-<rule id="rulehomisarah" scope="public">
-<example>Sarah allume les lampes du salon</example>
-<tag>out.action=new Object(); </tag>
-<tag>out.action.param="; </tag>
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="rulehomidom" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="rulehomidom" scope="public">
+    <example>Sarah allume les lampes du salon</example>
+    <tag>out.action=new Object(); </tag>
+    <tag>out.action.param=""; </tag>
 
-<item>Sarah</item>
+    <item>Sarah</item>
 
-<one-of>
+       <one-of>
+				
+				<!-- Commande -->
+         
+		    <item>allume<tag>out.action.type="command";out.action.command="on";out.action.ttsAction="j'ai allumer"</tag></item>
+            <item>Ã©teint<tag>out.action.type="command";out.action.command="off";out.action.ttsAction="j'ai Ã©teint"</tag></item>
+            <item>ouvre<tag>out.action.type="command";out.action.command="on";out.action.ttsAction="j'ai ouvert";</tag></item>
+            <item>ferme<tag>out.action.type="command";out.action.command="off";out.action.ttsAction="j'ai fermer";</tag></item>
+            <item>mode<tag>out.action.type="command";out.action.command="run";out.action.ttsAction="j'ai activer le mode";</tag></item>
+			<item>donne moi<tag>out.action.type="value";out.action.command="Value"</tag></item>
+        	<item>mÃ©<tag>out.action.type="command";out.action.command="DIM"</tag></item>
+         	<item>entre ouvre<tag>out.action.type="command";out.action.command="OUVERTURE";out.action.ttsAction="j'ai entre ouvert";</tag></item>
 
-<item>allume<tag>out.action.type="command";out.action.command="on";out.action.ttsAction="j'ai allumer"</tag></item>
-<item>éteint<tag>out.action.type="command";out.action.command="off";out.action.ttsAction="j'ai éteint"</tag></item>
-<item>ouvre<tag>out.action.type="command";out.action.command="on";out.action.ttsAction="j'ai ouvert";</tag></item>
-<item>ferme<tag>out.action.type="command";out.action.command="off";out.action.ttsAction="j'ai fermer";</tag></item>
-<item>mode<tag>out.action.type="command";out.action.command="run";out.action.ttsAction="  ";</tag></item>
-<item>donne moi<tag>out.action.type="value";out.action.command="Value"</tag></item>
-<item>mé<tag>out.action.type="command";out.action.command="DIM"</tag></item>
-<item>entre ouvre<tag>out.action.type="command";out.action.command="OUVERTURE";out.action.ttsAction="j'ai entre ouvert";</tag></item>
+        </one-of>
 
-</one-of>
+        <one-of>
+                    
+                    <!-- ID_Device -->
+          	
+          <item>le salon<tag>out.action.device="device";out.action.id_device="51b65e39-11b6-4e06-9f56-2b45a85cd8aa";out.action.ttsDevice="le salon";</tag></item>
+          <item>la cuisine<tag>out.action.device="device";out.action.id_device="7ac195c6-fa0b-4f4b-9362-e94ad33fd90a";out.action.ttsDevice="la cuisine";</tag></item>
+          <item>la chambre une<tag>out.action.device="device";out.action.id_device="1871ab8b-b9d8-4a58-ad36-49fd555d8d5f";out.action.ttsDevice="la chambre une";</tag></item>
+		 <item>la chambre deux<tag>out.action.device="device";out.action.id_device="23d53c03-5449-4f20-8642-8eff62b45c6e";out.action.ttsDevice="la chambre deux";</tag></item>
+		 <item>les volÃ© du salon<tag>out.action.device="device";out.action.id_device="0f7cc978-7943-4eb2-a9cc-d67c2ebeef4f";out.action.ttsDevice="les volÃ© du salon";</tag></item>
+          <item>les volÃ© de la cuisine<tag>out.action.device="device";out.action.id_device="d1237e4e-c8ac-43cd-8ab8-2b0b37b1780d";out.action.ttsDevice="les volÃ© de la cuisine";</tag></item>
+          <item>les volÃ© dÃ© chambre<tag>out.action.device="device";out.action.id_device="e028bf78-9415-44dc-be66-4c45156f33fe";out.action.ttsDevice="les volÃ© dÃ© chambre";</tag></item>
+					<item>tou les volÃ©<tag>out.action.device="device";out.action.id_device="6ea220d9-1b8f-4a8e-9b7f-f058f4eb8015";out.action.ttsDevice="tou les volÃ©";</tag></item>
+						
+                   <!--ID_Macro -->
+            
+          <item>Ã©teindre tout<tag>out.action.device="macro";out.action.id_device="4a655c35-11b9-401f-8b43-31b77bf19ce5"</tag></item>
+          <item>xbmc cuisine<tag>out.action.device="macro";out.action.id_device="3f187487-980e-496b-b7a8-9a711e169198"</tag></item>
+          <item>tÃ©lÃ©vision<tag>out.action.device="macro";out.action.id_device="880cfa66-353d-45ef-bb99-9fe618fb99ba"</tag></item>
+          <item>soirÃ©e<tag>out.action.device="macro";out.action.id_device="674af2c3-1587-44d7-bc2f-f7f4c831baf6"</tag></item>
+			
+                   <!--ID_Read -->
+          
+            
+					<item>la temperature dÃ© chambre<tag>out.action.device="device";out.action.id_device="12c6583e-fb38-4eca-a687-c817e21a81f5";out.action.ttsTmp=" la tempÃ©rature dÃ© chambre et de";out.action.ttsDeg="degrÃ©s";</tag></item>
+					<item>la tempÃ©rature de lo chaude<tag>out.action.device="device";out.action.id_device="40c1c4e4-9120-4b9e-b446-b74e88d727d0";out.action.ttsTmp="la tempÃ©rature de lo chaude et de";out.action.ttsDeg="degrÃ©s";</tag></item>
+					<item>la tempÃ©rature de la chambre une<tag>out.action.device="device";out.action.id_device="0555658f-96c2-487b-9db5-6d7d90a0da92";out.action.ttsTmp="la tempÃ©rature de la chambre une et de";out.action.ttsDeg="degrÃ©s";</tag></item>
+					<item>la tempÃ©rature de la chambre deu<tag>out.action.device="device";out.action.id_device="0555658f-96c2-487b-9db5-6d7d90a0da92";out.action.ttsTmp="la tempÃ©rature de la chambre deu et de";out.action.ttsDeg="degrÃ©s";</tag></item>
+		 			<item>la tempÃ©rature extÃ©rieur<tag>out.action.device="device";out.action.id_device="2e386f61-7e8e-4a5d-b5ea-172c8f67fa78";out.action.ttsTmp="la tempÃ©rature exterieur et de";out.action.ttsDeg="degrÃ©s";</tag></item>
+					<item>la tempÃ©rature du salon<tag>out.action.device="device";out.action.id_device="58b73992-9e92-44c4-9cc8-8534d48117c7";out.action.ttsTmp="la tempÃ©rature du salon et de";out.action.ttsDeg="degrÃ©s";</tag></item>
+					<item>la consomation du chauffage<tag>out.action.device="device";out.action.id_device="7b1531bc-acc0-48e2-9a6e-c0ce96c47be1";out.action.ttsTmp="la consomation du chauffage et de";out.action.ttsDeg="kilos de pellets";</tag></item>
+					<item>le tarif E D F<tag>out.action.device="device";out.action.id_device="771b45fb-f9d3-477b-882b-b731e6733d27";out.action.ttsTmp="le tarif E D F et";</tag></item>
+					<item>le taux d'humiditer extÃ©rieur<tag>out.action.device="device";out.action.id_device="3383092d-339c-49d9-8c43-7dd778c708a1";out.action.ttsTmp="l'humiditÃ© extÃ©rieur et de";out.action.ttsDeg="%";</tag></item>
+        </one-of>
+    
+   		  <one-of>
 
-<one-of>
+          <item>sil te plai<tag></tag></item>
+          <item>a zÃ©ro<tag>out.action.param="Variation=0"</tag></item>
+      		<item>a un<tag>out.action.param="Variation=1"</tag></item>
+      		<item>a deu<tag>out.action.param="Variation=2"</tag></item>
+      		<item>a troi<tag>out.action.param="Variation=3"</tag></item>
+      		<item>a quatre<tag>out.action.param="Variation=4"</tag></item>
+      		<item>a cinq<tag>out.action.param="Variation=5"</tag></item>
+      		<item>a six<tag>out.action.param="Variation=6"</tag></item>
+      		<item>a sept<tag>out.action.param="Variation=7"</tag></item>
+      		<item>a huit<tag>out.action.param="Variation=8"</tag></item>
+      		<item>a neuf<tag>out.action.param="Variation=9"</tag></item>
+      		<item>a dis<tag>out.action.param="Variation=10"</tag></item>
+      		<item>a onze<tag>out.action.param="Variation=11"</tag></item>
+      		<item>a douze<tag>out.action.param="Variation=12"</tag></item>
+      		<item>a treize<tag>out.action.param="Variation=13"</tag></item>
+      		<item>a quatorze<tag>out.action.param="Variation=14"</tag></item>
+      		<item>a quinze<tag>out.action.param="Variation=15"</tag></item>
+      		<item>a seize<tag>out.action.param="Variation=16"</tag></item>
+      		<item>a dix sept<tag>out.action.param="Variation=17"</tag></item>
+      		<item>a dix huit<tag>out.action.param="Variation=18"</tag></item>
+      		<item>a dix neuf<tag>out.action.param="Variation=19"</tag></item>
+      		<item>a vingt<tag>out.action.param="Variation=20"</tag></item>
+      		<item>a vingt et un<tag>out.action.param="Variation=21"</tag></item>
+      		<item>a vingt deu<tag>out.action.param="Variation=22"</tag></item>
+      		<item>a vingt troi<tag>out.action.param="Variation=23"</tag></item>
+      		<item>a vingt quatre<tag>out.action.param="Variation=24"</tag></item>
+      		<item>a vingt cinq<tag>out.action.param="Variation=25"</tag></item>
+      		<item>a vingt six<tag>out.action.param="Variation=26"</tag></item>
+      		<item>a vingt sept<tag>out.action.param="Variation=27"</tag></item>
+      		<item>a vingt huit<tag>out.action.param="Variation=28"</tag></item>
+      		<item>a vingt neuf<tag>out.action.param="Variation=29"</tag></item>
+      		<item>a trente<tag>out.action.param="Variation=30"</tag></item>
+      		<item>a trente cinq<tag>out.action.param="Variation=35"</tag></item>
+          <item>a quarante<tag>out.action.param="Variation=40"</tag></item>
+      		<item>a quarante cinq<tag>out.action.param="Variation=45"</tag></item>
+      		<item>a cinquante<tag>out.action.param="Variation=50"</tag></item>
+      		<item>a cinquante cinq<tag>out.action.param="Variation=55"</tag></item>
+      		<item>a soixante<tag>out.action.param="Variation=60"</tag></item>
+      		<item>a soixante cinq<tag>out.action.param="Variation=65"</tag></item>
+      		<item>a soixante dis<tag>out.action.param="Variation=70"</tag></item>
+      		<item>a soixante quinze<tag>out.action.param="Variation=75"</tag></item>
+      		<item>a quatre vingt<tag>out.action.param="Variation=80"</tag></item>
+      		<item>a quatre vingt cinq<tag>out.action.param="Variation=85"</tag></item>
+          <item>a quatre vingt dix<tag>out.action.param="Variation=90"</tag></item>
+      		<item>a quatre vingt quize<tag>out.action.param="Variation=95"</tag></item>
+      		<item>a cent<tag>out.action.param="Variation=100"</tag></item>
+          
+        </one-of> 
+	
 
-<!-- ( Partie device on/off dim )-->
-
-<item>Asbence en cours<tag>out.action.device="device";out.action.id_device="d9a749fd-1432-4d2e-b8b3-20022350de89";out.action.ttsDevice="Asbence en cours";</tag></item>
-<item>Eclairage  Chambre 1<tag>out.action.device="device";out.action.id_device="a4a7af63-6215-47cd-8f79-509b4cf21af1";out.action.ttsDevice="Eclairage  Chambre 1";</tag></item>
-<item>Eclairage  Chambre 2<tag>out.action.device="device";out.action.id_device="cf6fe70d-a03a-4ede-8ab2-311a0c1d947d";out.action.ttsDevice="Eclairage  Chambre 2";</tag></item>
-<item>Eclairage  Etage<tag>out.action.device="device";out.action.id_device="ec2e7079-f9e6-4755-bba8-e7f731ffc468";out.action.ttsDevice="Eclairage  Etage";</tag></item>
-<item>Eclairage  Salle de Bain RdC<tag>out.action.device="device";out.action.id_device="437383f9-f3d0-49c4-a4ce-0a83b2381932";out.action.ttsDevice="Eclairage  Salle de Bain RdC";</tag></item>
-<item>Eclairage  WC RdC<tag>out.action.device="device";out.action.id_device="ee30ee4c-5111-43a6-aca7-ad3c3d8f048b";out.action.ttsDevice="Eclairage  WC RdC";</tag></item>
-<item>Eclairage 1 Cellier<tag>out.action.device="device";out.action.id_device="2888fa40-056a-4854-b70a-0e52c5322967";out.action.ttsDevice="Eclairage 1 Cellier";</tag></item>
-<item>Eclairage 1 Ecurie<tag>out.action.device="device";out.action.id_device="836405fc-817d-46e3-9058-387237c63404";out.action.ttsDevice="Eclairage 1 Ecurie";</tag></item>
-<item>Eclairage 1 Grenier<tag>out.action.device="device";out.action.id_device="a48a3f39-e051-4fbe-b7d2-22e745e9f86c";out.action.ttsDevice="Eclairage 1 Grenier";</tag></item>
-<item>Eclairage 1 Palier<tag>out.action.device="device";out.action.id_device="9bd8448d-a068-404d-bab4-53c8715b9919";out.action.ttsDevice="Eclairage 1 Palier";</tag></item>
-<item>Eclairage 1 Salle<tag>out.action.device="device";out.action.id_device="51b65e39-11b6-4e06-9f56-2b45a85cd8aa";out.action.ttsDevice="Eclairage 1 Salle";</tag></item>
-<item>Eclairage 2 Cellier<tag>out.action.device="device";out.action.id_device="c4b70e9a-c308-405b-bf5f-b670e09d86be";out.action.ttsDevice="Eclairage 2 Cellier";</tag></item>
-<item>Eclairage 2 Ecurie<tag>out.action.device="device";out.action.id_device="341341c6-2e72-4b17-870c-9317d1f1e7f7";out.action.ttsDevice="Eclairage 2 Ecurie";</tag></item>
-<item>Eclairage 2 Grenier<tag>out.action.device="device";out.action.id_device="b1762f22-eafe-40c5-8bbe-bfbc29669f31";out.action.ttsDevice="Eclairage 2 Grenier";</tag></item>
-<item>Eclairage 2 Palier<tag>out.action.device="device";out.action.id_device="b6dc9b20-fc76-49b0-9f6a-73e3c768793f";out.action.ttsDevice="Eclairage 2 Palier";</tag></item>
-<item>Eclairage 2 Salle<tag>out.action.device="device";out.action.id_device="0c3e440c-37dc-4483-bd51-61b8070a6f89";out.action.ttsDevice="Eclairage 2 Salle";</tag></item>
-<item>Eclairage Chambre 3<tag>out.action.device="device";out.action.id_device="c92eec0d-d4ca-4696-ae34-756e3a6b0f2b";out.action.ttsDevice="Eclairage Chambre 3";</tag></item>
-<item>Eclairage Chambre 3<tag>out.action.device="device";out.action.id_device="41c4f159-5312-4d0f-955c-da3009001768";out.action.ttsDevice="Eclairage Chambre 3";</tag></item>
-<item>Eclairage Chambre 4<tag>out.action.device="device";out.action.id_device="e6a93f2e-d873-488e-959f-c5f162a70fb8";out.action.ttsDevice="Eclairage Chambre 4";</tag></item>
-<item>Eclairage Chambre 4<tag>out.action.device="device";out.action.id_device="82026fcd-1d24-4192-be25-f7134abcb734";out.action.ttsDevice="Eclairage Chambre 4";</tag></item>
-<item>Eclairage Cour<tag>out.action.device="device";out.action.id_device="401bb8fe-cd26-4c0c-ae66-96bc5b296236";out.action.ttsDevice="Eclairage Cour";</tag></item>
-<item>Eclairage Cuisine Bar<tag>out.action.device="device";out.action.id_device="6f9d799e-6536-4c10-94f2-d031119c2fe6";out.action.ttsDevice="Eclairage Cuisine Bar";</tag></item>
-<item>Eclairage Cuisine Centre Bar<tag>out.action.device="device";out.action.id_device="02596b9b-9817-4fa6-a350-6519c7bdedaf";out.action.ttsDevice="Eclairage Cuisine Centre Bar";</tag></item>
-<item>Eclairage Cuisine Centre Evier<tag>out.action.device="device";out.action.id_device="e8582446-614e-4212-9168-24e54ad12da4";out.action.ttsDevice="Eclairage Cuisine Centre Evier";</tag></item>
-<item>Eclairage Cuisine Centre Fenetre<tag>out.action.device="device";out.action.id_device="67a55b6d-f199-40a4-afc7-c673c8ea1f81";out.action.ttsDevice="Eclairage Cuisine Centre Fenetre";</tag></item>
-<item>Eclairage Cuisine Evier<tag>out.action.device="device";out.action.id_device="226f7af9-c518-4edb-89c3-2e97758d9cda";out.action.ttsDevice="Eclairage Cuisine Evier";</tag></item>
-<item>Eclairage Entree Chambre<tag>out.action.device="device";out.action.id_device="be75d5ac-0c4b-4dc7-b991-df4390494c89";out.action.ttsDevice="Eclairage Entree Chambre";</tag></item>
-<item>Eclairage Entree Entree<tag>out.action.device="device";out.action.id_device="b595c25a-c42c-46bd-95a5-ba8b86867e60";out.action.ttsDevice="Eclairage Entree Entree";</tag></item>
-<item>Eclairage Entree Salle<tag>out.action.device="device";out.action.id_device="249c597a-a388-4f97-b2a0-bd912974d3b3";out.action.ttsDevice="Eclairage Entree Salle";</tag></item>
-<item>Eclairage Escalier<tag>out.action.device="device";out.action.id_device="202784f0-2808-4a23-8c29-85cc64b669cb";out.action.ttsDevice="Eclairage Escalier";</tag></item>
-<item>Eclairage Lavabo Etage<tag>out.action.device="device";out.action.id_device="110f7f68-ceaa-4b24-935c-bedc8a722ae2";out.action.ttsDevice="Eclairage Lavabo Etage";</tag></item>
-<item>Eclairage Lavabo Etage<tag>out.action.device="device";out.action.id_device="c57e9e80-4097-4d38-a705-c5823672ef59";out.action.ttsDevice="Eclairage Lavabo Etage";</tag></item>
-<item>Eclairage Lavabo RdC<tag>out.action.device="device";out.action.id_device="e8128049-0ec9-4b68-a5b9-664c83bfc77e";out.action.ttsDevice="Eclairage Lavabo RdC";</tag></item>
-<item>Eclairage Local technique<tag>out.action.device="device";out.action.id_device="e6a8cc15-ddc6-4908-918b-91f4306f8208";out.action.ttsDevice="Eclairage Local technique";</tag></item>
-<item>Eclairage Parking<tag>out.action.device="device";out.action.id_device="e6a60939-75cc-484f-baef-ce3c7e39d75d";out.action.ttsDevice="Eclairage Parking";</tag></item>
-<item>Eclairage Salle de Bain Etage<tag>out.action.device="device";out.action.id_device="c09341c1-bb7a-42d9-b50f-55da3e355c2d";out.action.ttsDevice="Eclairage Salle de Bain Etage";</tag></item>
-<item>Eclairage Salle Pierre Centre<tag>out.action.device="device";out.action.id_device="5e8f78c3-f31d-4407-adce-f642f27ad753";out.action.ttsDevice="Eclairage Salle Pierre Centre";</tag></item>
-<item>Eclairage Salle Pierre Cour<tag>out.action.device="device";out.action.id_device="9fcef75d-bfe1-41c9-a79b-8824754dff61";out.action.ttsDevice="Eclairage Salle Pierre Cour";</tag></item>
-<item>Eclairage Salle Pierre Rue<tag>out.action.device="device";out.action.id_device="c9af25eb-99c4-4d7c-b7ec-864b2c6b3977";out.action.ttsDevice="Eclairage Salle Pierre Rue";</tag></item>
-<item>Eclairage Sous Toit<tag>out.action.device="device";out.action.id_device="0a1a9b4c-5850-43c4-836d-9e439578f8de";out.action.ttsDevice="Eclairage Sous Toit";</tag></item>
-<item>Eclairage Virage<tag>out.action.device="device";out.action.id_device="f803fd37-06df-413a-b039-25177fce233d";out.action.ttsDevice="Eclairage Virage";</tag></item>
-<item>Eclairage WC Cellier<tag>out.action.device="device";out.action.id_device="8b3c4705-3677-4d82-a494-e4938b1444d8";out.action.ttsDevice="Eclairage WC Cellier";</tag></item>
-<item>Eclairage WC Etage<tag>out.action.device="device";out.action.id_device="f5d03b0b-9e64-4452-a9bb-b40b7926cec1";out.action.ttsDevice="Eclairage WC Etage";</tag></item>
-<item>Prise 1 Grenier<tag>out.action.device="device";out.action.id_device="2ee75312-1701-449a-8ae3-5777279c1b60";out.action.ttsDevice="Prise 1 Grenier";</tag></item>
-<item>Prise 2 Grenier<tag>out.action.device="device";out.action.id_device="bd9300d5-3b0d-4ff1-8e58-9c1e04d543f0";out.action.ttsDevice="Prise 2 Grenier";</tag></item>
-<item>Volet Chambre 1<tag>out.action.device="device";out.action.id_device="601254fa-c367-45ff-830c-415ecc723dcf";out.action.ttsDevice="Volet Chambre 1";</tag></item>
-<item>Volet Chambre 2<tag>out.action.device="device";out.action.id_device="17c1b5c5-d05b-4ae8-850b-81cbd5a46e9a";out.action.ttsDevice="Volet Chambre 2";</tag></item>
-<item>Volet Chambre 3<tag>out.action.device="device";out.action.id_device="a1beb0c7-3d7b-45b7-a826-34a876558225";out.action.ttsDevice="Volet Chambre 3";</tag></item>
-<item>Volet Chambre 4<tag>out.action.device="device";out.action.id_device="0fa26558-4bc4-419c-9b22-f40ecbb72134";out.action.ttsDevice="Volet Chambre 4";</tag></item>
-<item>Volet Cuisine Droit<tag>out.action.device="device";out.action.id_device="ad6596d8-c919-4f9a-a2bf-2c86896b1a35";out.action.ttsDevice="Volet Cuisine Droit";</tag></item>
-<item>Volet Cuisine Gauche<tag>out.action.device="device";out.action.id_device="bff58386-e17c-4e32-87ea-971b7185dc9f";out.action.ttsDevice="Volet Cuisine Gauche";</tag></item>
-<item>Volet Palier Cour<tag>out.action.device="device";out.action.id_device="a728aea3-bae1-43b5-8484-a0ad849284ec";out.action.ttsDevice="Volet Palier Cour";</tag></item>
-<item>Volet Palier Rue<tag>out.action.device="device";out.action.id_device="39f41964-b6e1-47e3-87d6-331e8635e25e";out.action.ttsDevice="Volet Palier Rue";</tag></item>
-<item>Volet Salle Droit<tag>out.action.device="device";out.action.id_device="511e4c01-d8f7-4a26-b82f-74e9670be446";out.action.ttsDevice="Volet Salle Droit";</tag></item>
-<item>Volet Salle Gauche<tag>out.action.device="device";out.action.id_device="0f7cc978-7943-4eb2-a9cc-d67c2ebeef4f";out.action.ttsDevice="Volet Salle Gauche";</tag></item>
-<item>Volet Salle Porte<tag>out.action.device="device";out.action.id_device="206ab9da-624f-4902-9fbc-9ab0b2ce8e30";out.action.ttsDevice="Volet Salle Porte";</tag></item>
-
-</one-of>
-
-<!--Partie Macro -->
-<one-of>
-
-<item>Alarme blanc soir<tag>out.action.device="macro";out.action.id_device="79adbd04-2326-4a81-9531-7b0e5f6eb9b9";out.action.ttsDevice="j'ai executé : Alarme blanc soir";</tag></item>
-<item>Alarme poele eteint<tag>out.action.device="macro";out.action.id_device="500a8c5d-d143-42e4-8725-9a39f1014e53";out.action.ttsDevice="j'ai executé : Alarme poele eteint";</tag></item>
-<item>bit de vie<tag>out.action.device="macro";out.action.id_device="ee6dcde7-fa7a-46ae-be8b-34cca9ef206f";out.action.ttsDevice="j'ai executé : bit de vie";</tag></item>
-<item>Calcul Poele Allumé<tag>out.action.device="macro";out.action.id_device="b727f650-6811-40a6-a14c-46aac73fafd7";out.action.ttsDevice="j'ai executé : Calcul Poele Allumé";</tag></item>
-<item>Calcul Pour Regul<tag>out.action.device="macro";out.action.id_device="24c5237a-cdd3-4719-a989-3be8fee13d5a";out.action.ttsDevice="j'ai executé : Calcul Pour Regul";</tag></item>
-<item>Chauffage Jour<tag>out.action.device="macro";out.action.id_device="b3a7271d-d868-4d86-a621-92778ba7fdaf";out.action.ttsDevice="j'ai executé : Chauffage Jour";</tag></item>
-<item>cmd ouv gen<tag>out.action.device="macro";out.action.id_device="d3870aee-92dc-44bc-8b79-d8276def2f12";out.action.ttsDevice="j'ai executé : cmd ouv gen";</tag></item>
-<item>Eclairage chemin<tag>out.action.device="macro";out.action.id_device="9f612bcf-5ec4-42db-b1d5-b3ea5d22983f";out.action.ttsDevice="j'ai executé : Eclairage chemin";</tag></item>
-<item>eclairage exterieur télécommande<tag>out.action.device="macro";out.action.id_device="b950d80f-e5fe-448d-a265-71f82f0e43e9";out.action.ttsDevice="j'ai executé : eclairage exterieur télécommande";</tag></item>
-<item>eclairage exterieur telecommande2<tag>out.action.device="macro";out.action.id_device="649ec249-9691-4db0-8abd-982f5b3b4916";out.action.ttsDevice="j'ai executé : eclairage exterieur telecommande2";</tag></item>
-<item>Extinction Eclairage Bat EXT<tag>out.action.device="macro";out.action.id_device="7a367890-9dac-497e-84d2-73b856d46972";out.action.ttsDevice="j'ai executé : Extinction Eclairage Bat EXT";</tag></item>
-<item>Extinction Eclairage Chambres<tag>out.action.device="macro";out.action.id_device="23b386dc-3fad-41ab-9ec2-a773c5e42c45";out.action.ttsDevice="j'ai executé : Extinction Eclairage Chambres";</tag></item>
-<item>Extinction Eclairage Cuisine<tag>out.action.device="macro";out.action.id_device="ab06505d-a057-4057-838a-0914d6c6ec69";out.action.ttsDevice="j'ai executé : Extinction Eclairage Cuisine";</tag></item>
-<item>Extinction Eclairage Entree Palier<tag>out.action.device="macro";out.action.id_device="6b87755f-5aaa-42a8-887f-d8137bcd3162";out.action.ttsDevice="j'ai executé : Extinction Eclairage Entree Palier";</tag></item>
-<item>Extinction Eclairage Exterieur<tag>out.action.device="macro";out.action.id_device="b0f38a43-c337-417a-be59-cf0da578db3e";out.action.ttsDevice="j'ai executé : Extinction Eclairage Exterieur";</tag></item>
-<item>Extinction Eclairage Salle<tag>out.action.device="macro";out.action.id_device="ed354fe2-f7e8-449e-bc97-f2e1e2b2af98";out.action.ttsDevice="j'ai executé : Extinction Eclairage Salle";</tag></item>
-<item>Extinction Eclairage Salle de bain<tag>out.action.device="macro";out.action.id_device="221f6ce1-084b-483f-98bc-7bae04aba173";out.action.ttsDevice="j'ai executé : Extinction Eclairage Salle de bain";</tag></item>
-<item>Extinction generale<tag>out.action.device="macro";out.action.id_device="aa05c18f-adbf-4eda-b4dc-a51d6df71164";out.action.ttsDevice="j'ai executé : Extinction generale";</tag></item>
-<item>Jour rouge<tag>out.action.device="macro";out.action.id_device="484d3ba5-853e-4d9b-9805-ab8d6426c4c8";out.action.ttsDevice="j'ai executé : Jour rouge";</tag></item>
-<item>Macro Auto Volet Partie Jour<tag>out.action.device="macro";out.action.id_device="469ebe13-c6af-4785-b5b2-0ca64d4b2872";out.action.ttsDevice="j'ai executé : Macro Auto Volet Partie Jour";</tag></item>
-<item>Macro Auto Volet Partie Nuit<tag>out.action.device="macro";out.action.id_device="6ce91efb-1fdf-4f4f-9636-6e37810325df";out.action.ttsDevice="j'ai executé : Macro Auto Volet Partie Nuit";</tag></item>
-<item>Macro Manu Volet Partie Jour<tag>out.action.device="macro";out.action.id_device="429ebe13-c6af-4785-b5b2-0ca64d4b2872";out.action.ttsDevice="j'ai executé : Macro Manu Volet Partie Jour";</tag></item>
-<item>Macro Manu Volet Partie Nuit<tag>out.action.device="macro";out.action.id_device="c95bb4c6-2492-477f-9446-699e5bbd3b51";out.action.ttsDevice="j'ai executé : Macro Manu Volet Partie Nuit";</tag></item>
-<item>Message Coupure EDF<tag>out.action.device="macro";out.action.id_device="9e19f6a5-134a-4286-b5dd-09498898b3eb";out.action.ttsDevice="j'ai executé : Message Coupure EDF";</tag></item>
-<item>message essai<tag>out.action.device="macro";out.action.id_device="9557e969-065f-4fe6-bf9c-8b38fd450e83";out.action.ttsDevice="j'ai executé : message essai";</tag></item>
-<item>Pilote Chauffage Elec<tag>out.action.device="macro";out.action.id_device="f4d5058d-ae64-4cd6-80a2-3ddc6c7ab626";out.action.ttsDevice="j'ai executé : Pilote Chauffage Elec";</tag></item>
-<item>Restart Téléinfo<tag>out.action.device="macro";out.action.id_device="bdbff71f-c04e-4ea1-9c28-cecf87d57797";out.action.ttsDevice="j'ai executé : Restart Téléinfo";</tag></item>
-<item>Script Regulation VMC<tag>out.action.device="macro";out.action.id_device="e8a4e19a-5e92-40c8-b213-9104cd11002c";out.action.ttsDevice="j'ai executé : Script Regulation VMC";</tag></item>
-<item>Tarif Demain EDF<tag>out.action.device="macro";out.action.id_device="358a9cfc-25b9-484d-8388-86ff3ed0c10d";out.action.ttsDevice="j'ai executé : Tarif Demain EDF";</tag></item>
-<item>Tarif Jour EDF<tag>out.action.device="macro";out.action.id_device="2487eeec-3126-4f80-ad35-c2284ee9ef4e";out.action.ttsDevice="j'ai executé : Tarif Jour EDF";</tag></item>
-
-</one-of>
-
-<!-- Partie lecture device T°, humidité, etc... -->
-<one-of>
-
-<item>baterie serveur<tag>out.action.device="device";out.action.id_device="46a217eb-432e-48e0-82aa-e29458ff6ccd";out.action.ttsTmp="La valeur de baterie serveur et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffage Chambre 1<tag>out.action.device="device";out.action.id_device="6df41e17-ad89-4ed7-8804-9bb94aae6956";out.action.ttsTmp="La valeur de Chauffage Chambre 1 et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffage Chambre 2<tag>out.action.device="device";out.action.id_device="b1e4bde8-7a3d-45e2-bbfa-1ead04617542";out.action.ttsTmp="La valeur de Chauffage Chambre 2 et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffage Chambre 3<tag>out.action.device="device";out.action.id_device="856e7322-9f77-4537-b6f8-dbd0b0c9954d";out.action.ttsTmp="La valeur de Chauffage Chambre 3 et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffage Chambre 4<tag>out.action.device="device";out.action.id_device="1ab0a8b3-a6c2-4373-9a92-cdf0cf147668";out.action.ttsTmp="La valeur de Chauffage Chambre 4 et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffage Entree Etage<tag>out.action.device="device";out.action.id_device="959352bb-e369-47d9-adde-bc281c1709ac";out.action.ttsTmp="La valeur de Chauffage Entree Etage et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffage Entree RdC<tag>out.action.device="device";out.action.id_device="4c44480d-a972-4f26-bd09-d9aa7a8fa0ed";out.action.ttsTmp="La valeur de Chauffage Entree RdC et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffage Salle<tag>out.action.device="device";out.action.id_device="fceb20c4-7c6b-434a-815c-d25271cfe2e1";out.action.ttsTmp="La valeur de Chauffage Salle et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffage Salle de Bain Etage<tag>out.action.device="device";out.action.id_device="2c057cbb-c4eb-41fe-aaaf-e8613e5828ed";out.action.ttsTmp="La valeur de Chauffage Salle de Bain Etage et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffage Salle de Bain RdC<tag>out.action.device="device";out.action.id_device="3d37d784-0b7b-43ac-b72b-de440726e47b";out.action.ttsTmp="La valeur de Chauffage Salle de Bain RdC et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffe-eau 150L<tag>out.action.device="device";out.action.id_device="e3e1f95a-7337-4dec-828a-7f29d000937f";out.action.ttsTmp="La valeur de Chauffe-eau 150L et de";out.action.ttsDeg="";</tag></item>
-<item>Chauffe-eau 30L<tag>out.action.device="device";out.action.id_device="eac4995f-8f37-4f28-a4ab-40da49ee6b90";out.action.ttsTmp="La valeur de Chauffe-eau 30L et de";out.action.ttsDeg="";</tag></item>
-<item>Clapet VMC<tag>out.action.device="device";out.action.id_device="16242098-9f66-4ee9-a4c6-fcfec462ccc9";out.action.ttsTmp="La valeur de Clapet VMC et de";out.action.ttsDeg="";</tag></item>
-<item>Cmd Auto Ventil<tag>out.action.device="device";out.action.id_device="58b0e60e-2550-4f6a-aed7-1374ac72cdaf";out.action.ttsTmp="La valeur de Cmd Auto Ventil et de";out.action.ttsDeg="";</tag></item>
-<item>Coef Ventillation<tag>out.action.device="device";out.action.id_device="31647e2c-7148-499b-838d-395443b61585";out.action.ttsTmp="La valeur de Coef Ventillation et de";out.action.ttsDeg="";</tag></item>
-<item>Commande VMC Chambre<tag>out.action.device="device";out.action.id_device="207b08bc-d0ea-44c2-8257-23560b7a6487";out.action.ttsTmp="La valeur de Commande VMC Chambre et de";out.action.ttsDeg="";</tag></item>
-<item>Commande VMC Sanitaire<tag>out.action.device="device";out.action.id_device="83096602-9266-49b2-81f3-87cef9000248";out.action.ttsTmp="La valeur de Commande VMC Sanitaire et de";out.action.ttsDeg="";</tag></item>
-<item>Consigne Partie Jour<tag>out.action.device="device";out.action.id_device="429586fd-80c5-4789-af89-3805b1b69652";out.action.ttsTmp="La valeur de Consigne Partie Jour et de";out.action.ttsDeg="";</tag></item>
-<item>Consigne Partie Nuit<tag>out.action.device="device";out.action.id_device="4f902e0c-26b6-41fc-8ae7-42fdd063471a";out.action.ttsTmp="La valeur de Consigne Partie Nuit et de";out.action.ttsDeg="";</tag></item>
-<item>couleur demain<tag>out.action.device="device";out.action.id_device="4db8d4d9-f688-48e3-9a0d-cf12ff37d6ee";out.action.ttsTmp="La valeur de couleur demain et de";out.action.ttsDeg="";</tag></item>
-<item>Detecteur Virage<tag>out.action.device="device";out.action.id_device="543e40c1-75ef-469d-9b39-78534d1536ee";out.action.ttsTmp="La valeur de Detecteur Virage et de";out.action.ttsDeg="";</tag></item>
-<item>Difference de consigne Jour<tag>out.action.device="device";out.action.id_device="84568b93-ccf5-438c-b0cb-eeff4023eb42";out.action.ttsTmp="La valeur de Difference de consigne Jour et de";out.action.ttsDeg="";</tag></item>
-<item>Difference de consigne Nuit<tag>out.action.device="device";out.action.id_device="bda56be3-20e0-4c30-b0b2-ed0bb930f5bf";out.action.ttsTmp="La valeur de Difference de consigne Nuit et de";out.action.ttsDeg="";</tag></item>
-<item>Difference de temperature IntExt<tag>out.action.device="device";out.action.id_device="848a76dd-79f2-40a5-8cee-01863f11fc5b";out.action.ttsTmp="La valeur de Difference de temperature IntExt et de";out.action.ttsDeg="";</tag></item>
-<item>Difference de temperature NuitJour<tag>out.action.device="device";out.action.id_device="166f28af-599f-4c6c-9b02-7c7e83fc5a75";out.action.ttsTmp="La valeur de Difference de temperature NuitJour et de";out.action.ttsDeg="";</tag></item>
-<item>Direction vent 2<tag>out.action.device="device";out.action.id_device="66f19e23-76bb-42cf-9043-581640c3fabf";out.action.ttsTmp="La valeur de Direction vent 2 et de";out.action.ttsDeg="";</tag></item>
-<item>ess skype<tag>out.action.device="device";out.action.id_device="3cf45f32-7356-4864-89ad-d75d3014e4fc";out.action.ttsTmp="La valeur de ess skype et de";out.action.ttsDeg="";</tag></item>
-<item>etat routeur<tag>out.action.device="device";out.action.id_device="55c2bfb7-4397-4cf9-8f15-51ea2d9afc6f";out.action.ttsTmp="La valeur de etat routeur et de";out.action.ttsDeg="";</tag></item>
-<item>HOMI_EnergieTotaleInstantanee<tag>out.action.device="device";out.action.id_device="energietotale01";out.action.ttsTmp="La valeur de HOMI_EnergieTotaleInstantanee et de";out.action.ttsDeg="";</tag></item>
-<item>HOMI_Saint<tag>out.action.device="device";out.action.id_device="saint01";out.action.ttsTmp="La valeur de HOMI_Saint et de";out.action.ttsDeg="";</tag></item>
-<item>humid1-2<tag>out.action.device="device";out.action.id_device="b75b3ef5-c22e-4111-9a20-8fefe70362c4";out.action.ttsTmp="La valeur de humid1-2 et de";out.action.ttsDeg="";</tag></item>
-<item>humid2 2<tag>out.action.device="device";out.action.id_device="a199f723-d1be-4eda-91e6-3b2d47d7ba04";out.action.ttsTmp="La valeur de humid2 2 et de";out.action.ttsDeg="";</tag></item>
-<item>humid3-2<tag>out.action.device="device";out.action.id_device="fda55d99-f4fa-46f2-9d4a-cee4483bd51c";out.action.ttsTmp="La valeur de humid3-2 et de";out.action.ttsDeg="";</tag></item>
-<item>Index Pince<tag>out.action.device="device";out.action.id_device="c00d2364-c87c-43f5-a979-380d3b8c658f";out.action.ttsTmp="La valeur de Index Pince et de";out.action.ttsDeg="";</tag></item>
-<item>Intensité Instantané EDF<tag>out.action.device="device";out.action.id_device="1dd82a12-c95b-46e5-91a6-52198255b704";out.action.ttsTmp="La valeur de Intensité Instantané EDF et de";out.action.ttsDeg="A";</tag></item>
-<item>Mem Température Salle<tag>out.action.device="device";out.action.id_device="cb94133c-6194-47a4-b1a1-cfbdec997f36";out.action.ttsTmp="La valeur de Mem Température Salle et de";out.action.ttsDeg="";</tag></item>
-<item>Pluie Courante 2<tag>out.action.device="device";out.action.id_device="87d88c94-4bec-494e-94ff-a7ed9915e641";out.action.ttsTmp="La valeur de Pluie Courante 2 et de";out.action.ttsDeg="";</tag></item>
-<item>Pluie total 2<tag>out.action.device="device";out.action.id_device="0b332e8d-867d-4868-a346-576137f4f67f";out.action.ttsTmp="La valeur de Pluie total 2 et de";out.action.ttsDeg="";</tag></item>
-<item>Prise 1 Salle Cour<tag>out.action.device="device";out.action.id_device="5ee63ea3-c238-4bfb-8d12-19d991756ba7";out.action.ttsTmp="La valeur de Prise 1 Salle Cour et de";out.action.ttsDeg="";</tag></item>
-<item>Prise 1 Salle Rue<tag>out.action.device="device";out.action.id_device="e4225c24-a2bb-4ef6-9a11-bc00e1f9b8f2";out.action.ttsTmp="La valeur de Prise 1 Salle Rue et de";out.action.ttsDeg="";</tag></item>
-<item>Prise 1 Tableau RdC<tag>out.action.device="device";out.action.id_device="f26e8510-b164-42b7-9fd8-cd02b6c68811";out.action.ttsTmp="La valeur de Prise 1 Tableau RdC et de";out.action.ttsDeg="";</tag></item>
-<item>Prise 2 Salle Cour<tag>out.action.device="device";out.action.id_device="90ece2b8-f47c-4ad4-8428-551e6e3c5aa2";out.action.ttsTmp="La valeur de Prise 2 Salle Cour et de";out.action.ttsDeg="";</tag></item>
-<item>Prise 2 Salle Rue<tag>out.action.device="device";out.action.id_device="aa856834-f4f0-4036-be72-1f5cf14cb4b0";out.action.ttsTmp="La valeur de Prise 2 Salle Rue et de";out.action.ttsDeg="";</tag></item>
-<item>Prise 2 Tableau RdC<tag>out.action.device="device";out.action.id_device="323b72fc-1b8c-412d-a78a-77dc09dd7529";out.action.ttsTmp="La valeur de Prise 2 Tableau RdC et de";out.action.ttsDeg="";</tag></item>
-<item>Prise 3 Salle Cour<tag>out.action.device="device";out.action.id_device="7e2daea5-2529-4701-9bb2-bcea7ebad60c";out.action.ttsTmp="La valeur de Prise 3 Salle Cour et de";out.action.ttsDeg="";</tag></item>
-<item>Prise 3 Salle Rue<tag>out.action.device="device";out.action.id_device="a282ff29-7e27-4f51-ad10-c75381675b26";out.action.ttsTmp="La valeur de Prise 3 Salle Rue et de";out.action.ttsDeg="";</tag></item>
-<item>Prise 3 Tableau RdC<tag>out.action.device="device";out.action.id_device="b7b04bc4-0f9d-439f-a231-eda87c979c4e";out.action.ttsTmp="La valeur de Prise 3 Tableau RdC et de";out.action.ttsDeg="";</tag></item>
-<item>Prise Chambre 1<tag>out.action.device="device";out.action.id_device="bc9b14ff-086b-4347-af20-fe97e0204703";out.action.ttsTmp="La valeur de Prise Chambre 1 et de";out.action.ttsDeg="";</tag></item>
-<item>Prise Chambre 2<tag>out.action.device="device";out.action.id_device="ad2c856b-6e9b-45e0-a768-bb306ee44484";out.action.ttsTmp="La valeur de Prise Chambre 2 et de";out.action.ttsDeg="";</tag></item>
-<item>Prise Chambre 3<tag>out.action.device="device";out.action.id_device="86a6cf04-3eed-4572-afb7-cbefefa67f0e";out.action.ttsTmp="La valeur de Prise Chambre 3 et de";out.action.ttsDeg="";</tag></item>
-<item>Prise Chambre 4<tag>out.action.device="device";out.action.id_device="38c4b01d-8dbd-4e95-8868-0abbee06f6f8";out.action.ttsTmp="La valeur de Prise Chambre 4 et de";out.action.ttsDeg="";</tag></item>
-<item>Puissance Instantané EDF<tag>out.action.device="device";out.action.id_device="9c607fdc-47f7-42d1-8cbc-fd5cb6324d04";out.action.ttsTmp="La valeur de Puissance Instantané EDF et de";out.action.ttsDeg="Watt";</tag></item>
-<item>Puissance Pince<tag>out.action.device="device";out.action.id_device="3ce91333-c9cf-41d8-8158-6c9d4dfb05e8";out.action.ttsTmp="La valeur de Puissance Pince et de";out.action.ttsDeg="";</tag></item>
-<item>Recevoir un message<tag>out.action.device="device";out.action.id_device="0908ff3c-650f-41f5-9e34-ff6971d170c6";out.action.ttsTmp="La valeur de Recevoir un message et de";out.action.ttsDeg="";</tag></item>
-<item>Sonnette<tag>out.action.device="device";out.action.id_device="a700f88c-626c-46eb-89ff-793ef99387ee";out.action.ttsTmp="La valeur de Sonnette et de";out.action.ttsDeg="";</tag></item>
-<item>Tarif Demain<tag>out.action.device="device";out.action.id_device="a4a8e387-86d4-4838-acc0-14a01d1a4a25";out.action.ttsTmp="La valeur de Tarif Demain et";out.action.ttsDeg="";</tag></item>
-<item>Tarif Jour<tag>out.action.device="device";out.action.id_device="771b45fb-f9d3-477b-882b-b731e6733d27";out.action.ttsTmp="La valeur de Tarif Jour et";out.action.ttsDeg="";</tag></item>
-<item>Télécommande<tag>out.action.device="device";out.action.id_device="54513046-9f4d-48d9-a847-18c3a56043ec";out.action.ttsTmp="La valeur de Télécommande et de";out.action.ttsDeg="";</tag></item>
-<item>Telecommande2<tag>out.action.device="device";out.action.id_device="e94f2302-d95c-458b-8949-2af93fa629bd";out.action.ttsTmp="La valeur de Telecommande2 et de";out.action.ttsDeg="";</tag></item>
-<item>Temperature etage<tag>out.action.device="device";out.action.id_device="12c6583e-fb38-4eca-a687-c817e21a81f5";out.action.ttsTmp="La valeur de Temperature etage et de";out.action.ttsDeg="";</tag></item>
-<item>Temperature exterieur<tag>out.action.device="device";out.action.id_device="2e386f61-7e8e-4a5d-b5ea-172c8f67fa78";out.action.ttsTmp="La valeur de Temperature exterieur et de";out.action.ttsDeg="";</tag></item>
-<item>Temperature Salle<tag>out.action.device="device";out.action.id_device="77ebe507-453f-4164-aef6-99b30f239a83";out.action.ttsTmp="La valeur de Temperature Salle et de";out.action.ttsDeg="";</tag></item>
-<item>Texte d'état VMC<tag>out.action.device="device";out.action.id_device="d3d951fb-40e4-4085-bc77-30c67456c9d2";out.action.ttsTmp="La valeur de Texte d'état VMC et de";out.action.ttsDeg="";</tag></item>
-<item>Vitesse vent 2<tag>out.action.device="device";out.action.id_device="2aea82b6-9583-41c3-89f8-b1601ce5b119";out.action.ttsTmp="La valeur de Vitesse vent 2 et de";out.action.ttsDeg="";</tag></item>
-<item>Vmc DF<tag>out.action.device="device";out.action.id_device="97df8145-aacc-4898-a800-ef71c4ebd9c0";out.action.ttsTmp="La valeur de Vmc DF et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Chambre 1<tag>out.action.device="device";out.action.id_device="601254fa-c367-45ff-830c-415ecc723dcf";out.action.ttsTmp="La valeur de Volet Chambre 1 et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Chambre 2<tag>out.action.device="device";out.action.id_device="17c1b5c5-d05b-4ae8-850b-81cbd5a46e9a";out.action.ttsTmp="La valeur de Volet Chambre 2 et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Chambre 3<tag>out.action.device="device";out.action.id_device="a1beb0c7-3d7b-45b7-a826-34a876558225";out.action.ttsTmp="La valeur de Volet Chambre 3 et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Chambre 4<tag>out.action.device="device";out.action.id_device="0fa26558-4bc4-419c-9b22-f40ecbb72134";out.action.ttsTmp="La valeur de Volet Chambre 4 et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Cuisine Droit<tag>out.action.device="device";out.action.id_device="ad6596d8-c919-4f9a-a2bf-2c86896b1a35";out.action.ttsTmp="La valeur de Volet Cuisine Droit et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Cuisine Gauche<tag>out.action.device="device";out.action.id_device="bff58386-e17c-4e32-87ea-971b7185dc9f";out.action.ttsTmp="La valeur de Volet Cuisine Gauche et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Palier Cour<tag>out.action.device="device";out.action.id_device="a728aea3-bae1-43b5-8484-a0ad849284ec";out.action.ttsTmp="La valeur de Volet Palier Cour et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Palier Rue<tag>out.action.device="device";out.action.id_device="39f41964-b6e1-47e3-87d6-331e8635e25e";out.action.ttsTmp="La valeur de Volet Palier Rue et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Salle Droit<tag>out.action.device="device";out.action.id_device="511e4c01-d8f7-4a26-b82f-74e9670be446";out.action.ttsTmp="La valeur de Volet Salle Droit et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Salle Gauche<tag>out.action.device="device";out.action.id_device="0f7cc978-7943-4eb2-a9cc-d67c2ebeef4f";out.action.ttsTmp="La valeur de Volet Salle Gauche et de";out.action.ttsDeg="";</tag></item>
-<item>Volet Salle Porte<tag>out.action.device="device";out.action.id_device="206ab9da-624f-4902-9fbc-9ab0b2ce8e30";out.action.ttsTmp="La valeur de Volet Salle Porte et de";out.action.ttsDeg="";</tag></item>
-<item>yy<tag>out.action.device="device";out.action.id_device="dc3b8c0a-235f-490f-9a9f-49b905511b0c";out.action.ttsTmp="La valeur de yy et de";out.action.ttsDeg="";</tag></item>
-
-</one-of>
-
-<one-of>
-
-<item>sil te plai<tag></tag></item>
-<item>a zéro pour sans<tag>out.action.param="Variation=0"</tag></item>
-<item>a cinq<tag>out.action.param="Variation=5"</tag></item>
-<item>a dis<tag>out.action.param="Variation=10"</tag></item>
-<item>a quinze<tag>out.action.param="Variation=15"</tag></item>
-<item>a vingt<tag>out.action.param="Variation=20"</tag></item>
-<item>a vingt cinq<tag>out.action.param="Variation=25"</tag></item>
-<item>a trente<tag>out.action.param="Variation=30"</tag></item>
-<item>a trente cinq<tag>out.action.param="Variation=35"</tag></item>
-<item>a quarante<tag>out.action.param="Variation=40"</tag></item>
-<item>a quarante cinq<tag>out.action.param="Variation=45"</tag></item>
-<item>a cinquante<tag>out.action.param="Variation=50"</tag></item>
-<item>a cinquante cinq<tag>out.action.param="Variation=55"</tag></item>
-<item>a soixante<tag>out.action.param="Variation=60"</tag></item>
-<item>a soixante cinq<tag>out.action.param="Variation=65"</tag></item>
-<item>a septante<tag>out.action.param="Variation=70"</tag></item>
-<item>a septante cinq<tag>out.action.param="Variation=75"</tag></item>
-<item>a quatre vingt<tag>out.action.param="Variation=80"</tag></item>
-<item>a quatre vingt cinq<tag>out.action.param="Variation=85"</tag></item>
-<item>a nonente<tag>out.action.param="Variation=90"</tag></item>
-<item>a nonente cinq<tag>out.action.param="Variation=95"</tag></item>
-<item>a cent<tag>out.action.param="Variation=100"</tag></item>
-
-</one-of>
-
-<tag>out.action._attributes.uri="http://"192.168.0.99":"8080"/sarah/homisarah";</tag>
-</rule>
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/homidom";</tag>
+  </rule> 
 </grammar>
