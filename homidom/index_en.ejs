@@ -1,0 +1,100 @@
+<%- layout('/layout/modal.ejs') -%>
+
+<h2>To Translate !</h2>
+
+<p>
+	Le module HoMIDoM 2.0 permet de lire ou modifier des périphériques du serveur domotique.
+	Les paramètres utilisés pour l'URL:
+</p>
+        
+<h3>Configuration</h3>
+<p>Configurer les composants dans le fichier xml</p>
+<p>Il faudra modifier les ID de vos composants dans le fichier homisarah.xml, c'est cette partie "<FONT COLOR="red">fc8a97ae-feaa-4f04-85e8-66721c163dd2</font>" que vous devez
+modifier en fonction de l'ID de vos composants, vous pouvez aussi créer plusieur ligne avec le meme ID ce qui vous permet de faire reconaitre plusieur phrases différente a SARAH</p>
+
+<p>par exemple  </p>
+
+<p> &lt;item&gt;le salon &lt;tag&gt;out.action.device="<FONT COLOR="red">fc8a97ae-feaa-4f04-85e8-66721c163dd2</font>"&lt;/tag&gt;&lt;/item&gt;</p>
+<p> &lt;item&gt;les lampes du salon&lt;tag&gt;out.action.device="<FONT COLOR="red">fc8a97ae-feaa-4f04-85e8-66721c163dd2</font>"&lt;/tag&gt;&lt;/item&gt;</p>
+
+<p>Vous permetra de définir plusieurs phrases différente pour le même ID, dans cette exemple vous pouvez dire.</p>
+
+<p>Sarah, allume le salon</p>
+<p>Sarah, eteint les lampes du salon etc...</p>	
+	
+<p>Sarah, mode éclairage soirée</p>
+<p>Sarah, mode XBMC.</p>
+<p>Sarah, donne moi la température de salon</p>
+
+<p>Configuration des messages de confirmation</p>
+
+<p>SARAH confirme que la commande a bien été éxecutée par different messages que vous pouvez modifier dans le fichier homisarah.xml, voila un exemple, vous pouvez modifier la partie en rouge </p>
+<p>&lt;item&gt;allume&lt;tag&gt;out.action.type="command";out.action.command="on";out.action.ttsAction="<FONT COLOR="red">j'ai allumer</font>"</p>
+
+<p>Composants HoMIDoM géré lampes, intérupteurs, volets, températures et macro </p>
+
+<p>Pour les macros et les températures c'est le même principe que pour les composants, il suffit de modifier la partie ID_Macro ou ID_Read, vous trouverez les id des macros dans le fichier config.xml de homidom</p>
+
+<p>Dans HoMIAdmin dans le <FONT COLOR="blue">menu Configuration</font>, dans l'<FONT COLOR="blue">onglet Configuration</font> il ya un <FONT COLOR="blue">bouton Export Sarah</font> qui vous permet de créer un fichier XML de tous vos composants HoMIDoM </p>
+
+<table class='table table-bordered'>
+	<tr><td>ip</td><td>configuration</td><td>adresse ip du serveur</td></tr>
+	<tr><td>port</td><td>configuration</td><td>port du serveur</td></tr>
+	<tr><td>idserveur</td><td>configuration</td><td>identifiant du serveur </td></tr>
+	<tr><td>id_device</td><td>data</td><td>id du composant à lire ou à modifier</td></tr>
+	<tr><td>device</td><td>data</td><td>type de device (device ou macro</td></tr>
+	<tr><td>type</td><td>data</td><td>type de commande ("value"=lire et "command"=modifier)</td></tr>
+	<tr><td>command</td><td>data</td><td>commande à faire au composant(READ, ON, OFF, OPEN, CLOSE, DIM, RUN pour les macros)</td></tr>
+	<tr><td>param</td><td>data</td><td>valeure à positionner en cas de DIM</td></tr>
+</table>
+
+<p>
+  Le paramètre de configuration <code>answer</code> permet de choisir différentes réponse de SARAH aux ordres.
+</p>
+          
+<h3>Usages</h3>
+<p>Voici plusieurs usages possibles de ce plugin, et plus généralement des box domotiques:</p>
+<ul>
+	<li>Reconnaissance vocale: SARAH allume la lampe du salon (cf. eedomus.xml)</li>
+	<li>Reconnaissance gestuelle: faire une règle pour allumer les lampes d'un geste</li>
+	<li>QRCode: allumer/éteindre un composant</li>
+	<li>Framework: faire un plugin perso appelant ce plugin</li>
+</ul>
+          
+<h3>Intégration</h3>
+<p>Ce plugin framework peut être utilisé par les autres plugins pour interroger la box domotique</p>
+  
+<h4>Get</h4>
+<p>Fait un Get sur le périphérique et récupère la valeure </p>
+<pre>
+  SARAH.call('homidom', { 'id_device' : '1a2b3c4d5e', 
+                          'device' : 'device', 
+                          'type' : 'value', 
+                          'command' : 'READ' }, function(options){
+    console.log(options.json.last_value);
+  });
+</pre>
+<p>L'appel est asynchrone ce qui impose de continuer le code dans le callback.</p>
+
+<h4>Set</h4>
+<p>Fait un Set sur le périphérique avec la valeure associée</p>
+<pre>
+  SARAH.call('homidom', { 'id_device' : '1a2b3c4d5e', 
+                          'device' : 'device', 
+                          'type' : 'command', 
+                          'command' : 'DIM' , 
+                          'param' : 'Variation=50'  }, function(options){
+    console.log('Et voilà');
+  });
+</pre>
+<p>Il est aussi possible d'appeler <code>SARAH.run()</code> sans callback. Le moteur de règle prendra la suite.</p>
+<p>Si vous ne voulez pas de vocalisation supprimer ce qui ce trouve dans la callback comme ceci </p>
+<p>callback({});</p>
+
+<h3>Migration v1.0 => v2.0</h3>
+Possibilité de faire des set et des get. Adaptation pour SARAH V4 
+
+<h3>REMERCIEMENTS</h3>
+
+<p>Jean-Philippe ENCAUSSE -> Pour SARAH </p>
+<p>Pascal, David, Seb, Mathieu et tous les autres que je ne peux citer -> Pour HoMiDoM (super boulot) </p>

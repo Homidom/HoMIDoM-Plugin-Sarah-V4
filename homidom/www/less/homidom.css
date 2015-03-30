@@ -1,0 +1,8 @@
+#homidom .portlet-header,
+#homidom .portlet-footer {
+  background-color: #7d7d7d;
+}
+#homidom .portlet-body {
+  color: #FFF;
+  background: #7d7d7d;
+}
